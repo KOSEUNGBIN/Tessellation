@@ -20,6 +20,8 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.AbsoluteLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -45,11 +47,12 @@ public class MainActivity extends Activity {
     ImageView img4;
     ImageView img5;
 
-    int img_width = 200;
-    int img_height = 200;
+    int img_width = 100;
+    int img_height = 100;
+
+    //사용할 패턴 이미지
     Bitmap patternImg;
     Bitmap resize;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +63,13 @@ public class MainActivity extends Activity {
         resize = Bitmap.createScaledBitmap(patternImg,img_width,img_height,true);
 
         //레이아웃 만들기
-        LinearLayout linearLayout = new LinearLayout(this);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams
-                (ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT);
-        linearLayout.setLayoutParams(params);
+//        LinearLayout linearLayout = new LinearLayout(this);
+//        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams
+//                (ViewGroup.LayoutParams.MATCH_PARENT,
+//                        ViewGroup.LayoutParams.MATCH_PARENT);
+//        linearLayout.setLayoutParams(params);
+
+        AbsoluteLayout absoluteLayout = new AbsoluteLayout(this);
 
         img1 = new ImageView(this);
         img2 = new ImageView(this);
@@ -72,22 +77,24 @@ public class MainActivity extends Activity {
         img4 = new ImageView(this);
         img5 = new ImageView(this);
 
-        //bitmap으로 이미지 가져와서 사이즈 조절
-        Bitmap patternImg = BitmapFactory.decodeResource(getResources(), R.drawable.pattern_image);
-        Bitmap resize = Bitmap.createScaledBitmap(patternImg,img_width,img_height,true);
+        absoluteLayout.addView(img1,new AbsoluteLayout.LayoutParams(img_width,img_height,0,0));
+        absoluteLayout.addView(img2,new AbsoluteLayout.LayoutParams(img_width,img_height,100,100));
+        absoluteLayout.addView(img3,new AbsoluteLayout.LayoutParams(img_width,img_height,200,200));
+        absoluteLayout.addView(img4,new AbsoluteLayout.LayoutParams(img_width,img_height,300,300));
+        absoluteLayout.addView(img5,new AbsoluteLayout.LayoutParams(img_width,img_height,400,400));
 
-        //만들어 놓은 LinearLayout에 imageview들 추가
-        linearLayout.addView(img1);
-        linearLayout.addView(img2);
-        linearLayout.addView(img3);
-        linearLayout.addView(img4);
-        linearLayout.addView(img5);
+//        //만들어 놓은 LinearLayout에 imageview들 추가
+//        linearLayout.addView(img1);
+//        linearLayout.addView(img2);
+//        linearLayout.addView(img3);
+//        linearLayout.addView(img4);
+//        linearLayout.addView(img5);
 
-        setContentView(linearLayout);
+        setContentView(absoluteLayout);
 
         //TouchListener 추가
         TouchListener touchListener1 = new TouchListener("linearLayout");
-        linearLayout.setOnTouchListener(touchListener1);
+        absoluteLayout.setOnTouchListener(touchListener1);
     }
 
     class TouchListener implements View.OnTouchListener{
@@ -114,17 +121,20 @@ public class MainActivity extends Activity {
                     break;
                 case ACTION_MOVE:
                     Log.e("MainActivity","ACTION_MOVE 발생");
-                    Log.v(imgv_name,"X = " + motionEvent.getX() + "     Y = " + motionEvent.getY() );
+                    float x = motionEvent.getX();
+                    float y = motionEvent.getY();
 
-                    if(motionEvent.getX() < 200 ){
+                    Log.v(imgv_name,"X = " + x + "     Y = " + y );
+
+                    if(x < 100 && y < 100){
                         img1.setImageBitmap(resize);
-                    }else if (200 < motionEvent.getX() &&  motionEvent.getX()  < 400) {
+                    }else if (100 < x && x < 200 && 100 < y && y < 200 ) {
                         img2.setImageBitmap(resize);
-                    }else if (400 < motionEvent.getX() &&  motionEvent.getX()  < 600) {
+                    }else if (200 < x && x < 300 && 200 < y && y < 300) {
                         img3.setImageBitmap(resize);
-                    }else if (600 < motionEvent.getX() &&  motionEvent.getX()  < 800) {
+                    }else if (300 < x && x < 400 && 300 < y && y < 400) {
                         img4.setImageBitmap(resize);
-                    }else if (800 < motionEvent.getX() &&  motionEvent.getX()  < 1000) {
+                    }else if (400 < x && x < 500 &&  400 < y && y < 500) {
                         img5.setImageBitmap(resize);
                     }
 
