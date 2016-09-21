@@ -49,8 +49,8 @@ public class FreeModeActivity extends Activity {
             @Override
             public boolean onPinch(int i, long l, double v) {
                 //3손가락의 핀치로 액티비티 전환
-                Log.e("Free",i + " fingers  " + l + " millsec  " + v + "fixels far");
-                if(i == 3 && l >= 10 && v >=  10){
+                Log.e("Free", i + " fingers  " + l + " millsec  " + v + "fixels far");
+                if (i == 3 && l >= 10 && v >= 10) {
                     Intent intent = new Intent(FreeModeActivity.this, MainActivity.class);
                     startActivity(intent);
                 }

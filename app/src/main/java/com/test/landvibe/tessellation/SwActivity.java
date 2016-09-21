@@ -41,11 +41,9 @@ public class SwActivity extends ActionBarActivity {
                 float currentYPosition = me.getY();
                 int positiona = gv.pointToPosition((int) currentXPosition, (int) currentYPosition);
 
-                if(action==MotionEvent.ACTION_DOWN &&  gv.getChildAt(positiona) != null)
-                {
+                if (action == MotionEvent.ACTION_DOWN && gv.getChildAt(positiona) != null) {
                     gv.getChildAt(positiona).setVisibility(View.INVISIBLE);
-                }
-                else if(action==MotionEvent.ACTION_MOVE &&  gv.getChildAt(positiona) != null){
+                } else if (action == MotionEvent.ACTION_MOVE && gv.getChildAt(positiona) != null) {
                     gv.getChildAt(positiona).setVisibility(View.INVISIBLE);
                 }
                 return true;
