@@ -2,8 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/test"
-    android:background="@drawable/background">
+    android:id="@+id/test">
 
     <GridView
         android:layout_centerInParent="true"
@@ -13,7 +12,15 @@
         android:verticalSpacing="0dp"
         android:horizontalSpacing="0dp"
         android:scaleType="fitXY"
+        android:background="@drawable/scene_2_back_3"
         android:padding="0dp">
+
     </GridView>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:layout_centerInParent="true"
+        android:src="@drawable/background_2_2"/>
 
 </RelativeLayout>
