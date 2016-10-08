@@ -23,7 +23,7 @@ public class SwActivity extends Activity {
 
     GridView.LayoutParams params;
 
-    static final String SESSION = "SESSION3";
+    static final String SESSION = "SESSION2";
 
 
 
@@ -34,6 +34,7 @@ public class SwActivity extends Activity {
         setContentView(R.layout.activity_sw);
 
         int img[] = new int [96];
+        final boolean animationFlag[] = new boolean[96];
 
         display = getWindowManager().getDefaultDisplay();
         metrics = new DisplayMetrics();
@@ -69,10 +70,13 @@ public class SwActivity extends Activity {
 
                 if ((action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) && gv.getChildAt(position) != null) {
 
-
                     Animation animation = new AlphaAnimation(0.0f,1.0f);
                     animation.setDuration(1000);
-                    gv.getChildAt(position).setAnimation(animation);
+                    if( !animationFlag[position]){
+                        gv.getChildAt(position).setAnimation(animation);
+                        animationFlag[position] = true;
+                    }
+
 
                     int draw_temp = 0;
 
