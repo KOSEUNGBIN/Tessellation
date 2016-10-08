@@ -23,7 +23,7 @@ public class SwActivity extends Activity {
 
     GridView.LayoutParams params;
 
-    static final String SESSION = "SESSION2";
+    static final String SESSION = "SESSION1";
 
 
 
@@ -33,8 +33,8 @@ public class SwActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sw);
 
-        int img[] = new int [96];
-        final boolean animationFlag[] = new boolean[96];
+        int img[] = new int [150];
+        final boolean animationFlag[] = new boolean[150];
 
         display = getWindowManager().getDefaultDisplay();
         metrics = new DisplayMetrics();
@@ -47,11 +47,11 @@ public class SwActivity extends Activity {
 
         final GridView gv = (GridView) findViewById(R.id.gridView1);
         gv.setAdapter(adapter);
-        gv.setColumnWidth(30);
+        gv.setColumnWidth(10);
 //        gv.setMinimumHeight(30);
 
         if(SESSION.equals("SESSION1"))
-            gv.setNumColumns(12);
+            gv.setNumColumns(14);
         else if(SESSION.equals("SESSION2"))
             gv.setNumColumns(12);
         else if(SESSION.equals("SESSION3"))
@@ -188,11 +188,11 @@ public class SwActivity extends Activity {
                 convertView = inf.inflate(layout, null);
 
             if(SESSION.equals("SESSION1"))
-                params = new GridView.LayoutParams(metrics.widthPixels / 12 , metrics.heightPixels / 8);
+                params = new GridView.LayoutParams( 65 ,65);
             else if(SESSION.equals("SESSION2") )
-                params = new GridView.LayoutParams(metrics.widthPixels / 12 , metrics.heightPixels / 8);
+                params = new GridView.LayoutParams(metrics.widthPixels / 48 , metrics.heightPixels / 22);
             else if( SESSION.equals("SESSION3"))
-                params = new GridView.LayoutParams(metrics.widthPixels / 12 , metrics.heightPixels / 8);
+                params = new GridView.LayoutParams(metrics.widthPixels / 48 , metrics.heightPixels / 22);
             else
                 ;
                 convertView.setLayoutParams(params);
