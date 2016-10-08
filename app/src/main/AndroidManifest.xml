@@ -6,22 +6,14 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SwActivity"
-                  android:screenOrientation="landscape"
-                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".FreeModeActivity"/>
         <activity android:name=".MainActivity">
 
         </activity>
 
-        <activity android:name=".FreeModeActivity">
+        <activity android:name=".SwActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
