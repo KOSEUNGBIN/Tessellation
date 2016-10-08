@@ -23,7 +23,7 @@ public class SwActivity extends Activity {
 
     GridView.LayoutParams params;
 
-    static final String SESSION = "SESSION1";
+    static final String SESSION = "SESSION3";
 
 
 
@@ -33,8 +33,8 @@ public class SwActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sw);
 
-        int img[] = new int [150];
-        final boolean animationFlag[] = new boolean[150];
+        int img[] = new int [300];
+        final boolean animationFlag[] = new boolean[300];
 
         display = getWindowManager().getDefaultDisplay();
         metrics = new DisplayMetrics();
@@ -53,9 +53,9 @@ public class SwActivity extends Activity {
         if(SESSION.equals("SESSION1"))
             gv.setNumColumns(14);
         else if(SESSION.equals("SESSION2"))
-            gv.setNumColumns(12);
+            gv.setNumColumns(14);
         else if(SESSION.equals("SESSION3"))
-            gv.setNumColumns(12);
+            gv.setNumColumns(14);
         else
             ;
 
@@ -71,7 +71,7 @@ public class SwActivity extends Activity {
                 if ((action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) && gv.getChildAt(position) != null) {
 
                     Animation animation = new AlphaAnimation(0.0f,1.0f);
-                    animation.setDuration(1000);
+                    animation.setDuration(250);
                     if( !animationFlag[position]){
                         gv.getChildAt(position).setAnimation(animation);
                         animationFlag[position] = true;
@@ -190,9 +190,9 @@ public class SwActivity extends Activity {
             if(SESSION.equals("SESSION1"))
                 params = new GridView.LayoutParams( 65 ,65);
             else if(SESSION.equals("SESSION2") )
-                params = new GridView.LayoutParams(metrics.widthPixels / 48 , metrics.heightPixels / 22);
+                params = new GridView.LayoutParams(65 ,65);
             else if( SESSION.equals("SESSION3"))
-                params = new GridView.LayoutParams(metrics.widthPixels / 48 , metrics.heightPixels / 22);
+                params = new GridView.LayoutParams(65 ,65);
             else
                 ;
                 convertView.setLayoutParams(params);
