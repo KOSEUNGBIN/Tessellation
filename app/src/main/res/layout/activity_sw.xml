@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="540dp"
-    android:layout_height="360dp"
+    android:layout_width="1080dp"
+    android:layout_height="720dp"
     android:orientation="vertical"
     android:background="#FFFFFF"
     android:id="@+id/test">
@@ -8,108 +8,140 @@
     <GridView
         android:layout_centerInParent="true"
         android:id="@+id/gridView1"
-        android:layout_width="315dp"
-        android:layout_height="315dp"
+        android:layout_width="630dp"
+        android:layout_height="630dp"
         android:verticalSpacing="0dp"
         android:horizontalSpacing="0dp"
         android:scaleType="fitXY"
         android:padding="0dp">
 
     </GridView>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:layout_centerInParent="true"
-        android:src="@drawable/background2"/>
+        android:src="@drawable/background2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/imageView2" />
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="45dp"
-        android:paddingLeft="15dp"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
+        android:paddingLeft="30dp"
         android:src="@drawable/main_exit"
         android:layout_centerInParent="true"
         android:layout_alignParentLeft="true"/>
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="45dp"
-        android:paddingRight="15dp"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
+        android:paddingRight="30dp"
         android:src="@drawable/main_done"
         android:layout_centerInParent="true"
         android:layout_alignParentRight="true"/>
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:paddingRight="15dp"
-        android:paddingTop="10dp"
+        android:id="@+id/clear"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:paddingRight="30dp"
+        android:paddingTop="20dp"
         android:src="@drawable/main_clear"
         android:layout_alignParentRight="true"/>
-    
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="match_parent"
-        android:alpha="0.8"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/main_menu_body"
-        />
-    
-    <LinearLayout
-        android:layout_width="55dp"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:paddingLeft="7dp"
-        android:orientation="vertical"
-        android:layout_alignParentLeft="true"
-        >
+
+
+
+
+
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="10dp"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:alpha="0.8"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/main_menu_body"
+            android:id="@+id/imageView" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/ramp"
+            android:src="@drawable/main_ramp"/>
+        <ImageView
+            android:id="@+id/zigzag"
+            android:layout_width="90dp"
+            android:layout_height="62dp"
+            android:layout_below="@id/ramp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="16dp"
+            android:clickable="true"
             android:alpha="0.5"
             android:src="@drawable/main_zigzag"/>
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="31dp"
-            android:layout_marginBottom="10dp"
+            android:id="@+id/size_change"
+            android:layout_width="90dp"
+            android:layout_height="62dp"
+            android:layout_below="@id/zigzag"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
             android:alpha="0.5"
             android:src="@drawable/main_size_change"/>
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="31dp"
-            android:layout_marginBottom="10dp"
-            android:alpha="0.5"
+            android:id="@+id/degree1"
+            android:layout_width="90dp"
+            android:layout_height="62dp"
+            android:layout_below="@id/size_change"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:alpha="0.3"
             android:src="@drawable/main_90_degree"/>
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="31dp"
-            android:layout_marginBottom="10dp"
-            android:alpha="0.5"
+            android:id="@+id/cross"
+            android:layout_width="90dp"
+            android:layout_height="62dp"
+            android:layout_below="@+id/degree1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:alpha="0.3"
             android:src="@drawable/main_cross"/>
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="31dp"
-            android:layout_marginBottom="10dp"
-            android:alpha="0.5"
+            android:id="@+id/degree2"
+            android:layout_width="90dp"
+            android:layout_height="62dp"
+            android:layout_below="@+id/cross"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:alpha="0.3"
             android:src="@drawable/main_45_degree"/>
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="31dp"
+            android:id="@+id/save"
+            android:layout_width="90dp"
+            android:layout_height="62dp"
+            android:layout_below="@+id/degree2"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:alpha="0.3"
             android:src="@drawable/main_save"/>
 
         <View
-            android:layout_width="25dp"
-            android:layout_height="10dp"/>
+            android:id="@+id/none_view"
+            android:layout_below="@+id/save"
+            android:layout_width="50dp"
+            android:layout_height="20dp"/>
 
         <ImageView
-            android:layout_width="18dp"
-            android:layout_height="12dp"
-            android:layout_marginLeft="13dp"
+            android:layout_width="36dp"
+            android:layout_height="24dp"
+            android:layout_below="@+id/none_view"
+            android:layout_marginLeft="46dp"
+            android:alpha="0.3"
             android:src="@drawable/main_upward"/>
-        
-    </LinearLayout>
+
+
+
 
 </RelativeLayout>
