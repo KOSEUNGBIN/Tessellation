@@ -16,8 +16,9 @@ import android.view.animation.Animation;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-public class SwActivity extends Activity {
+public class Sw2Activity extends Activity {
 
 
     Display display ;
@@ -30,10 +31,6 @@ public class SwActivity extends Activity {
     String SESSION = "SESSION1";
     GridView gv = null;
     int img[] = new int [9000];
-    int images_simul_1[] = new int [96];
-    int images_simul_2[] = new int [96];
-    int images_simul_3[] = new int [96];
-    int images_simul_4[] = new int [96];
     final boolean animationFlag[] = new boolean[9000];
 
     MyAdapter adapter;
@@ -42,7 +39,10 @@ public class SwActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sw);
+        setContentView(R.layout.activity_sw2);
+
+
+
 
         display = getWindowManager().getDefaultDisplay();
         metrics = new DisplayMetrics();
@@ -124,25 +124,28 @@ public class SwActivity extends Activity {
                 }
             }
         });
-
+*/
         degreeQuaterIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(isSeleted[4] == false){
                     degreeQuaterIv.setAlpha(1f);
                     isSeleted[4] = true;
+                    setSession();
                 } else {
                     degreeQuaterIv.setAlpha(0.5f);
                     isSeleted[4] = false;
+                    setSession();
                 }
             }
-        });*/
+        });
         adapter = new MyAdapter(getApplicationContext(), R.layout.row, img);
 
         gv = (GridView) findViewById(R.id.gridView1);
         gv.setAdapter(adapter);
-        gv.setColumnWidth(12);
-        gv.setNumColumns(10);
+        gv.setColumnWidth(10);
+        gv.setNumColumns(20);
+
 
         gv.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent me) {
@@ -166,65 +169,104 @@ public class SwActivity extends Activity {
                     int draw_temp = 0;
 
                     if(SESSION.equals("SESSION1")) {
-                        draw_temp = (position % 2 == 0 ? R.drawable.scene_1_1_1 : R.drawable.scene_1_1_2);
+                        draw_temp = R.drawable.scene1_01_01;
                     }
                     else if(SESSION.equals("SESSION2")) {
 
-                        if(position % 24 < 12) {
-                            draw_temp = (position % 2 == 0 ? R.drawable.scene_1_2_03 : R.drawable.scene_1_2_02);
-                        }else {
-                            draw_temp = (position % 2 == 0 ? R.drawable.scene_1_2_13 : R.drawable.scene_1_2_14);
+                        if(position % 4 == 0) {
+                            draw_temp = R.drawable.scene1_02_01;
+                        }else if(position % 4 == 1){
+                            draw_temp = R.drawable.scene1_02_02;
+                        }else if(position % 4 == 2){
+                            draw_temp = R.drawable.scene1_02_03;
+                        }else if(position % 4 == 3){
+                            draw_temp = R.drawable.scene1_02_04;
                         }
 
 
                     }else if (SESSION.equals("SESSION3")){
 
 
-                        if(position % 20 < 10) {
-                            switch(position % 5){
+                        if(position % 40 > 20) {
+                            switch(position % 4){
                                 case 0 :
-                                    draw_temp = R.drawable.scene_1_3_06;
+                                    draw_temp = R.drawable.scene1_03_01_01;
                                     break;
                                 case 1 :
-                                    draw_temp = R.drawable.scene_1_3_02;
+                                    draw_temp = R.drawable.scene1_03_01_02;
                                     break;
                                 case 2 :
-                                    draw_temp = R.drawable.scene_1_3_03;
+                                    draw_temp = R.drawable.scene1_03_01_03;
                                     break;
                                 case 3 :
-                                    draw_temp = R.drawable.scene_1_3_04;
-                                    break;
-                                case 4 :
-                                    draw_temp = R.drawable.scene_1_3_05;
+                                    draw_temp = R.drawable.scene1_03_01_04;
                                     break;
                                 default:
                                     ;
                             }
 
                         }else {
-                            switch(position % 5) {
+                            switch(position % 4){
                                 case 0 :
-                                    draw_temp = R.drawable.scene_1_3_13;
+                                    draw_temp = R.drawable.scene1_03_02_05;
                                     break;
                                 case 1 :
-                                    draw_temp = R.drawable.scene_1_3_14;
+                                    draw_temp = R.drawable.scene1_03_02_06;
                                     break;
                                 case 2 :
-                                    draw_temp = R.drawable.scene_1_3_15;
+                                    draw_temp = R.drawable.scene1_03_02_07;
                                     break;
                                 case 3 :
-                                    draw_temp = R.drawable.scene_1_3_16;
+                                    draw_temp = R.drawable.scene1_03_02_08;
                                     break;
-                                case 4 :
-                                    draw_temp = R.drawable.scene_1_3_17;
-                                    break;
-
                                 default:
                                     ;
                             }
                         }
 
-                    }else{
+                    } else if (SESSION.equals("SESSION4")){
+
+
+                        if(position % 40 > 20) {
+                            switch(position % 4){
+                                case 0 :
+                                    draw_temp = R.drawable.scene1_04_01_01;
+                                    break;
+                                case 1 :
+                                    draw_temp = R.drawable.scene1_04_01_02;
+                                    break;
+                                case 2 :
+                                    draw_temp = R.drawable.scene1_04_01_03;
+                                    break;
+                                case 3 :
+                                    draw_temp = R.drawable.scene1_04_01_04;
+                                    break;
+                                default:
+                                    ;
+                            }
+
+                        }else {
+                            switch(position % 4){
+                                case 0 :
+                                    draw_temp = R.drawable.scene1_04_02_05;
+                                    break;
+                                case 1 :
+                                    draw_temp = R.drawable.scene1_04_02_06;
+                                    break;
+                                case 2 :
+                                    draw_temp = R.drawable.scene1_04_02_07;
+                                    break;
+                                case 3 :
+                                    draw_temp = R.drawable.scene1_04_02_08;
+                                    break;
+                                default:
+                                    ;
+                            }
+                        }
+
+                    }
+
+                    else{
                         ;
                     }
 
@@ -242,14 +284,28 @@ public class SwActivity extends Activity {
 
     public void setSession(){
 
-        if(!isSeleted[0] && !isSeleted[1]){
+        if(!isSeleted[0] && !isSeleted[1] && !isSeleted[4]){
             SESSION = "SESSION1";
-        } else if (isSeleted[0] && !isSeleted[1]){
+            Toast.makeText(Sw2Activity.this,"효과없음",Toast.LENGTH_SHORT).show();
+        } else if (!isSeleted[0] && !isSeleted[1] && isSeleted[4]){
+            Toast.makeText(Sw2Activity.this,"각도변형",Toast.LENGTH_SHORT).show();
             SESSION = "SESSION2";
-        } else if (isSeleted[0] && isSeleted[1]){
+        } else if (isSeleted[0] && !isSeleted[1] && isSeleted[4]){
+            Toast.makeText(Sw2Activity.this,"각도변형 + 지그재그",Toast.LENGTH_SHORT).show();
             SESSION = "SESSION3";
+        } else if (isSeleted[0] && isSeleted[1] && isSeleted[4]){
+            Toast.makeText(Sw2Activity.this,"각도변형 + 지그재그 + 크기변형",Toast.LENGTH_SHORT).show();
+            SESSION = "SESSION4";
+        } else {
+            Toast.makeText(Sw2Activity.this,"현재 지원되지 않는 시뮬레이션 입니다.",Toast.LENGTH_SHORT).show();
+            Log.d("setSession" , "No Sessioin");
+            SESSION = "SESSION1";
         }
         Log.d("setSession" , SESSION);
+
+
+
+
         setGridView();
     }
 
@@ -259,8 +315,10 @@ public class SwActivity extends Activity {
 
         gv = (GridView) findViewById(R.id.gridView1);
         gv.setAdapter(adapter);
-        gv.setColumnWidth(15);
-        gv.setNumColumns(10);
+        gv.setColumnWidth(10);
+//        gv.setMinimumHeight(30);
+
+            gv.setNumColumns(20);
 
         gv.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent me) {
@@ -284,65 +342,104 @@ public class SwActivity extends Activity {
                     int draw_temp = 0;
 
                     if(SESSION.equals("SESSION1")) {
-                        draw_temp = (position % 2 == 0 ? R.drawable.scene_1_1_1 : R.drawable.scene_1_1_2);
+                        draw_temp = R.drawable.scene1_01_01;
                     }
                     else if(SESSION.equals("SESSION2")) {
 
-                        if(position % 24 < 12) {
-                            draw_temp = (position % 2 == 0 ? R.drawable.scene_1_2_03 : R.drawable.scene_1_2_02);
-                        }else {
-                            draw_temp = (position % 2 == 0 ? R.drawable.scene_1_2_13 : R.drawable.scene_1_2_14);
+                        if(position % 4 == 0) {
+                            draw_temp = R.drawable.scene1_02_01;
+                        }else if(position % 4 == 1){
+                            draw_temp = R.drawable.scene1_02_02;
+                        }else if(position % 4 == 2){
+                            draw_temp = R.drawable.scene1_02_03;
+                        }else if(position % 4 == 3){
+                            draw_temp = R.drawable.scene1_02_04;
                         }
 
 
                     }else if (SESSION.equals("SESSION3")){
 
 
-                        if(position % 20 < 10) {
-                            switch(position % 5){
+                        if(position % 40 > 20) {
+                            switch(position % 4){
                                 case 0 :
-                                    draw_temp = R.drawable.scene_1_3_06;
+                                    draw_temp = R.drawable.scene1_03_01_01;
                                     break;
                                 case 1 :
-                                    draw_temp = R.drawable.scene_1_3_02;
+                                    draw_temp = R.drawable.scene1_03_01_02;
                                     break;
                                 case 2 :
-                                    draw_temp = R.drawable.scene_1_3_03;
+                                    draw_temp = R.drawable.scene1_03_01_03;
                                     break;
                                 case 3 :
-                                    draw_temp = R.drawable.scene_1_3_04;
-                                    break;
-                                case 4 :
-                                    draw_temp = R.drawable.scene_1_3_05;
+                                    draw_temp = R.drawable.scene1_03_01_04;
                                     break;
                                 default:
                                     ;
                             }
 
                         }else {
-                            switch(position % 5) {
+                            switch(position % 4){
                                 case 0 :
-                                    draw_temp = R.drawable.scene_1_3_13;
+                                    draw_temp = R.drawable.scene1_03_02_05;
                                     break;
                                 case 1 :
-                                    draw_temp = R.drawable.scene_1_3_14;
+                                    draw_temp = R.drawable.scene1_03_02_06;
                                     break;
                                 case 2 :
-                                    draw_temp = R.drawable.scene_1_3_15;
+                                    draw_temp = R.drawable.scene1_03_02_07;
                                     break;
                                 case 3 :
-                                    draw_temp = R.drawable.scene_1_3_16;
+                                    draw_temp = R.drawable.scene1_03_02_08;
                                     break;
-                                case 4 :
-                                    draw_temp = R.drawable.scene_1_3_17;
-                                    break;
-
                                 default:
                                     ;
                             }
                         }
 
-                    }else{
+                    } else if (SESSION.equals("SESSION4")){
+
+
+                        if(position % 40 > 20) {
+                            switch(position % 4){
+                                case 0 :
+                                    draw_temp = R.drawable.scene1_04_01_01;
+                                    break;
+                                case 1 :
+                                    draw_temp = R.drawable.scene1_04_01_02;
+                                    break;
+                                case 2 :
+                                    draw_temp = R.drawable.scene1_04_01_03;
+                                    break;
+                                case 3 :
+                                    draw_temp = R.drawable.scene1_04_01_04;
+                                    break;
+                                default:
+                                    ;
+                            }
+
+                        }else {
+                            switch(position % 4){
+                                case 0 :
+                                    draw_temp = R.drawable.scene1_04_02_05;
+                                    break;
+                                case 1 :
+                                    draw_temp = R.drawable.scene1_04_02_06;
+                                    break;
+                                case 2 :
+                                    draw_temp = R.drawable.scene1_04_02_07;
+                                    break;
+                                case 3 :
+                                    draw_temp = R.drawable.scene1_04_02_08;
+                                    break;
+                                default:
+                                    ;
+                            }
+                        }
+
+                    }
+
+                    else{
                         ;
                     }
 
@@ -388,7 +485,7 @@ public class SwActivity extends Activity {
             if (convertView == null)
                 convertView = inf.inflate(layout, null);
 
-                params = new GridView.LayoutParams( 158 ,158);
+                params = new GridView.LayoutParams( 80 ,80);
 
                 convertView.setLayoutParams(params);
 
@@ -414,4 +511,9 @@ public class SwActivity extends Activity {
             return true;
         }
     };
+
+
+
+
+
 }
