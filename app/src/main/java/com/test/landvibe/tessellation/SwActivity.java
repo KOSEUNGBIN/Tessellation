@@ -144,11 +144,11 @@ public class SwActivity extends Activity {
 //        gv.setMinimumHeight(30);
 
         if(SESSION.equals("SESSION1"))
-            gv.setNumColumns(9);
+            gv.setNumColumns(10);
         else if(SESSION.equals("SESSION2"))
-            gv.setNumColumns(9);
+            gv.setNumColumns(10);
         else if(SESSION.equals("SESSION3"))
-            gv.setNumColumns(9);
+            gv.setNumColumns(10);
         else
             ;
 
@@ -273,11 +273,11 @@ public class SwActivity extends Activity {
 //        gv.setMinimumHeight(30);
 
         if(SESSION.equals("SESSION1"))
-            gv.setNumColumns(9);
+            gv.setNumColumns(10);
         else if(SESSION.equals("SESSION2"))
-            gv.setNumColumns(9);
+            gv.setNumColumns(10);
         else if(SESSION.equals("SESSION3"))
-            gv.setNumColumns(9);
+            gv.setNumColumns(10);
         else
             ;
 
@@ -410,11 +410,11 @@ public class SwActivity extends Activity {
                 convertView = inf.inflate(layout, null);
 
             if(SESSION.equals("SESSION1"))
-                params = new GridView.LayoutParams( 140 ,140);
+                params = new GridView.LayoutParams( 160 ,160);
             else if(SESSION.equals("SESSION2") )
-                params = new GridView.LayoutParams(140 ,140);
+                params = new GridView.LayoutParams(160 ,160);
             else if( SESSION.equals("SESSION3"))
-                params = new GridView.LayoutParams(140 ,140);
+                params = new GridView.LayoutParams(160 ,160);
             else
                 ;
                 convertView.setLayoutParams(params);
