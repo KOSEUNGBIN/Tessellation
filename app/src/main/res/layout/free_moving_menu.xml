@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="140dp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_centerInParent="true"
+    android:background="@drawable/free_figure_menu"
+    android:orientation="vertical"
+    android:paddingLeft="7dp">
+
+
+    <ImageView
+        android:id="@+id/free_moving_menu_01"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/free_moving_menu_01" />
+
+    <ImageView
+        android:id="@+id/free_moving_menu_02"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/free_moving_menu_02" />
+
+    <ImageView
+        android:id="@+id/free_moving_menu_03"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/free_moving_menu_03" />
+
+    <ImageView
+        android:id="@+id/free_moving_menu_04"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/free_moving_menu_04" />
+
+    <ImageView
+        android:id="@+id/free_moving_menu_05"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/free_moving_menu_05" />
+
+
+
+    <View
+        android:layout_width="25dp"
+        android:layout_height="10dp" />
+
+    <ImageView
+        android:id="@+id/free_moving_upward_imgbtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="43dp"
+        android:src="@drawable/free_top_upward" />
+
+</LinearLayout>
