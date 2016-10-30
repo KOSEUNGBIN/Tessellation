@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
     android:id="@+id/linearlayout">
 
-    <EditText
+    <RelativeLayout
+        android:id="@+id/relativelayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="FreeMode"
-        android:ems="10"
-        android:id="@+id/editText" />
+        android:layout_height="match_parent"
+        android:background="@drawable/background_free_co"
+        android:orientation="vertical">
+
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="800dp"
+            android:layout_height="800dp"
+            android:layout_centerInParent="true"
+            android:horizontalSpacing="0dp"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            android:verticalSpacing="0dp">
+
+        </GridView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/background_free" />
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="45dp"
+            android:paddingLeft="15dp"
+            android:src="@drawable/main_exit"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="45dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/main_done"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:src="@drawable/main_clear"
+            android:layout_alignParentRight="true"/>
+
+
+        <include android:id="@+id/free_menu_include_top"
+                layout="@layout/free_top_menu" />
+
+        <include android:id="@+id/free_menu_include_figure"
+                layout="@layout/free_figure_menu" />
+        <include android:id="@+id/free_menu_include_paints"
+                layout="@layout/free_paints_menu" />
+
+        <include android:id="@+id/free_menu_include_size"
+                layout="@layout/free_size_menu" />
+
+        <include android:id="@+id/free_menu_include_moving"
+            layout="@layout/free_moving_menu" />
+
+    </RelativeLayout>
 </LinearLayout>

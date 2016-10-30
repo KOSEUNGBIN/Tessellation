@@ -347,6 +347,7 @@ public class SwActivity extends Activity {
                     }
 
                     gv.getChildAt(position).setBackgroundResource(draw_temp);
+
                 }
 
                 return true;
