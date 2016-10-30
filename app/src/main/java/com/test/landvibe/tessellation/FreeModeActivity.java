@@ -34,6 +34,10 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
     private ImageView freeSizeUpwardImgbtn;
     private ImageView freeMovingUpwardImgbtn;
 
+    private ImageView freeExit;
+    private ImageView freeClear;
+    private ImageView freeDone;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +63,12 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
         freeSizeUpwardImgbtn.setOnClickListener(this);
         freeMovingUpwardImgbtn.setOnClickListener(this);
 
+        freeExit = (ImageView) findViewById(R.id.free_exit);
+        freeClear = (ImageView) findViewById(R.id.free_clear);
+        freeDone = (ImageView) findViewById(R.id.free_done);
+        freeExit.setOnClickListener(this);
+        freeClear.setOnClickListener(this);
+        freeDone.setOnClickListener(this);
 
         //SimpleFingerGestures 라이브러리 사용
         mySfg.setDebug(true);
@@ -164,6 +174,23 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
                 freeMenuIncludePaints.setVisibility(View.GONE);
                 freeMenuIncludeSize.setVisibility(View.GONE);
                 freeMenuIncludeMoving.setVisibility(View.VISIBLE);
+                break;
+            }
+            case R.id.free_exit :
+            {
+                // 나가기 버튼의 액션
+                finish();
+                break;
+            }
+            case R.id.free_clear :
+            {
+                // 초기화 버튼의 액션
+                recreate();
+                break;
+            }
+            case R.id.free_done :
+            {
+                // 완성 버튼의 액션
                 break;
             }
             case R.id.free_figure_upward_imgbtn :

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="120dp"
-    android:layout_height="wrap_content"
+    android:layout_width="140dp"
+    android:layout_height="800dp"
     android:orientation="vertical"
-    android:paddingLeft="20dp"
     android:paddingTop="10dp"
+    android:layout_marginLeft="10dp"
     android:layout_alignParentTop="true"
     android:layout_alignParentLeft="true"
     android:background="@drawable/free_top_menu">
@@ -15,8 +15,8 @@
         android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="50dp"
-        android:paddingLeft="15dp"
-        android:alpha="0.5"
+        android:layout_marginLeft="35dp"
+        android:alpha="1"
         android:src="@drawable/free_top_figure" />
 
     <ImageView
@@ -25,8 +25,8 @@
         android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="10dp"
-        android:paddingLeft="15dp"
-        android:alpha="0.5"
+        android:layout_marginLeft="35dp"
+        android:alpha="1"
         android:src="@drawable/free_top_paints" />
 
 
@@ -36,8 +36,8 @@
         android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="10dp"
-        android:paddingLeft="15dp"
-        android:alpha="0.5"
+        android:layout_marginLeft="35dp"
+        android:alpha="1"
         android:src="@drawable/free_top_size" />
 
     <ImageView
@@ -46,8 +46,8 @@
         android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="10dp"
-        android:paddingLeft="15dp"
-        android:alpha="0.5"
+        android:layout_marginLeft="35dp"
+        android:alpha="1"
         android:src="@drawable/free_top_moving" />
 
     <ImageView
@@ -56,18 +56,18 @@
         android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="10dp"
-        android:paddingLeft="17dp"
+        android:layout_marginLeft="35dp"
+        android:alpha="1"
         android:src="@drawable/free_top_imagine" />
 
-<!--    <View
-        android:layout_width="25dp"
-        android:layout_height="10dp" />
-
     <ImageView
-        android:id="@+id/free_top_upward_imgbtn"
-        android:layout_width="18dp"
-        android:layout_height="12dp"
-        android:layout_marginLeft="13dp"
-        android:src="@drawable/free_top_upward" />-->
+        android:id="@+id/free_top_trash_imgbtn"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="35dp"
+        android:alpha="1"
+        android:src="@drawable/free_top_trash" />
 
 </LinearLayout>
