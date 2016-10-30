@@ -208,7 +208,7 @@ public class MenuActivity extends Activity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuActivity.this, Sw3Activity.class);
+                Intent intent = new Intent(MenuActivity.this, FreeModeActivity.class);
                 startActivity(intent);
             }
         });
