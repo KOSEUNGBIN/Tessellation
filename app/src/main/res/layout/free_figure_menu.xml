@@ -8,12 +8,20 @@
     android:layout_alignParentLeft="true"
     android:background="@drawable/free_figure_menu">
 
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="34dp"
+        android:alpha="1"
+        android:src="@drawable/free_figure_menu_title" />
+
     <ScrollView
         android:id="@+id/free_figure_listview"
         android:layout_width="match_parent"
-        android:layout_height="410dp"
+        android:layout_height="450dp"
         android:paddingLeft="30dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="75dp"
         android:layout_gravity="center_vertical"
         android:scrollbars="none">
 
@@ -23,10 +31,11 @@
             android:orientation="vertical">
         <ImageView
             android:id="@+id/free_figure_menu_triangle_usual_imgbtn"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginBottom="15dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="8dp"
             android:alpha="0.5"
             android:src="@drawable/free_figure_menu_triangle_usual" />
 
@@ -125,7 +134,7 @@
             android:id="@+id/free_figure_menu_empty_diamond_imgbtn"
             android:layout_width="60dp"
             android:layout_height="40dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="28dp"
             android:layout_marginTop="10dp"
             android:alpha="0.5"
             android:src="@drawable/free_figure_menu_empty_diamond" />
@@ -135,14 +144,13 @@
 
     <View
         android:layout_width="25dp"
-        android:layout_height="10dp" />
+        android:layout_height="100dp" />
 
     <ImageView
         android:id="@+id/free_figure_upward_imgbtn"
-        android:layout_width="30dp"
+        android:layout_width="45dp"
         android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="43dp"
-        android:src="@drawable/free_top_upward" />
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/free_top_upward" />
 
 </LinearLayout>

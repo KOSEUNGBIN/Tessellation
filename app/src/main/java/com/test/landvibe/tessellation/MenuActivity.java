@@ -202,6 +202,7 @@ public class MenuActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, SwActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -210,6 +211,7 @@ public class MenuActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(MenuActivity.this, FreeModeActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -221,7 +223,7 @@ public class MenuActivity extends Activity {
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN: {
-                        v.getBackground().setColorFilter(0x60000000, PorterDuff.Mode.SRC_ATOP);
+                        v.getBackground().setColorFilter(0x2FF00000, PorterDuff.Mode.SRC_ATOP);
                         v.invalidate();
                         break;
                     }
@@ -236,5 +238,12 @@ public class MenuActivity extends Activity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+        super.onBackPressed();
+    }
 
 }
