@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

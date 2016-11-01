@@ -86,10 +86,10 @@
 
     <ImageView
         android:id="@+id/free_moving_upward_imgbtn"
-        android:layout_width="30dp"
+        android:layout_width="45dp"
         android:layout_height="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="46dp"
-        android:src="@drawable/free_top_upward" />
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/free_top_upward" />
 
 </LinearLayout>

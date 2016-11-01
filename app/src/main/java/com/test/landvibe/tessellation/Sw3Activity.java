@@ -2,6 +2,7 @@ package com.test.landvibe.tessellation;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -430,7 +431,13 @@ public class Sw3Activity extends Activity {
     };
 
 
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Sw3Activity.this, FreeModeActivity.class);
+        startActivity(intent);
+        finish();
+        super.onBackPressed();
+    }
 
 
 }

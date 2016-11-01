@@ -26,7 +26,7 @@
         </GridView>
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/background22"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
@@ -63,6 +63,8 @@
             android:src="@drawable/free_back_btn" />
 
 
+
+
         <include
             android:id="@+id/free_menu_include_top"
             layout="@layout/free_top_menu" />
@@ -82,6 +84,45 @@
         <include
             android:id="@+id/free_menu_include_moving"
             layout="@layout/free_moving_menu" />
+
+        <LinearLayout
+            android:id="@+id/free_center"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="355dp"
+            android:layout_marginLeft="635dp">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/free_right1"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@+id/free_center"
+            android:layout_marginTop="355dp">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/free_right2"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@+id/free_right1"
+            android:layout_marginTop="355dp">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/free_right3"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@+id/free_right2"
+            android:layout_marginTop="355dp">
+        </LinearLayout>
+
+
+
 
     </RelativeLayout>
 </LinearLayout>

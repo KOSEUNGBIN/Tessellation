@@ -2,6 +2,7 @@ package com.test.landvibe.tessellation;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -30,10 +31,6 @@ public class SwActivity extends Activity {
     String SESSION = "SESSION1";
     GridView gv = null;
     int img[] = new int [9000];
-    int images_simul_1[] = new int [96];
-    int images_simul_2[] = new int [96];
-    int images_simul_3[] = new int [96];
-    int images_simul_4[] = new int [96];
     final boolean animationFlag[] = new boolean[9000];
 
     MyAdapter adapter;
@@ -415,4 +412,12 @@ public class SwActivity extends Activity {
             return true;
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SwActivity.this, MenuActivity.class);
+        startActivity(intent);
+        finish();
+        super.onBackPressed();
+    }
 }

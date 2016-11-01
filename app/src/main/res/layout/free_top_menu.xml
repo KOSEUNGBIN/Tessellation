@@ -11,63 +11,63 @@
 
     <ImageView
         android:id="@+id/free_top_figure_imgbtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="43dp"
         android:alpha="1"
-        android:src="@drawable/free_top_figure" />
+        android:background="@drawable/free_top_figure" />
 
     <ImageView
         android:id="@+id/free_top_paints_imgbtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="43dp"
         android:alpha="1"
-        android:src="@drawable/free_top_paints" />
+        android:background="@drawable/free_top_paints" />
 
 
     <ImageView
         android:id="@+id/free_top_size_imgbtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="43dp"
         android:alpha="1"
-        android:src="@drawable/free_top_size" />
+        android:background="@drawable/free_top_size" />
 
     <ImageView
         android:id="@+id/free_top_moving_imgbtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="43dp"
         android:alpha="1"
-        android:src="@drawable/free_top_moving" />
+        android:background="@drawable/free_top_moving" />
 
     <ImageView
         android:id="@+id/free_top_imagine_imgbtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="43dp"
         android:alpha="1"
-        android:src="@drawable/free_top_imagine" />
+        android:background="@drawable/free_top_imagine" />
 
     <ImageView
         android:id="@+id/free_top_trash_imgbtn"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="43dp"
         android:alpha="1"
-        android:src="@drawable/free_top_trash" />
+        android:background="@drawable/free_top_trash" />
 
 </LinearLayout>
