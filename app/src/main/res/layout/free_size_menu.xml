@@ -25,19 +25,19 @@
         android:src="@drawable/free_size_menu_04" />
 
     <ImageView
-        android:id="@+id/free_size_menu_02"
+        android:id="@+id/size_change_second"
         android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_height="27dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="13dp"
-        android:src="@drawable/free_size_menu_05" />
+        android:layout_marginTop="20dp"
+        android:background="@drawable/free_size_menu_05" />
 
     <ImageView
         android:id="@+id/free_size_menu_03"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/free_size_menu_01" />
 
     <ImageView

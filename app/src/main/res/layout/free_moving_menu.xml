@@ -26,7 +26,7 @@
         android:src="@drawable/free_moving_menu_04" />
 
     <ImageView
-        android:id="@+id/free_moving_menu_02"
+        android:id="@+id/reflect"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="25dp"
@@ -35,7 +35,7 @@
         android:src="@drawable/free_moving_menu_02" />
 
     <ImageView
-        android:id="@+id/free_moving_menu_03"
+        android:id="@+id/rotate"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginLeft="25dp"
@@ -62,21 +62,23 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/free_moving_menu_05"
-            android:layout_width="64dp"
+            android:id="@+id/move_clone"
+            android:layout_width="55dp"
             android:layout_height="69dp"
-            android:alpha="1"
-            android:src="@drawable/free_moving_menu_03" />
+            android:alpha="0.5"
+            android:background="@drawable/free_moving_menu_03" />
 
         <ImageView
-            android:id="@+id/free_moving_menu_06"
-            android:layout_width="64dp"
+            android:id="@+id/move_confirm"
+            android:layout_width="55dp"
             android:layout_height="69dp"
-            android:alpha="1"
-            android:src="@drawable/free_moving_menu_05" />
+
+            android:alpha="0.5"
+            android:background="@drawable/free_moving_menu_05" />
 
     </LinearLayout>
 

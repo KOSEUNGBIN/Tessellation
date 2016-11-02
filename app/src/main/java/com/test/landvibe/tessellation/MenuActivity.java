@@ -217,14 +217,16 @@ public class MenuActivity extends Activity {
 
     }
 
-    public static void buttonEffect(View button){
+    public static void buttonEffect(final View button){
         button.setOnTouchListener(new View.OnTouchListener() {
 
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN: {
-                        v.getBackground().setColorFilter(0x2FF00000, PorterDuff.Mode.SRC_ATOP);
-                        v.invalidate();
+                        if(button.isClickable()) {
+                            v.getBackground().setColorFilter(0x2FF00000, PorterDuff.Mode.SRC_ATOP);
+                            v.invalidate();
+                        }
                         break;
                     }
                     case MotionEvent.ACTION_UP: {

@@ -25,6 +25,8 @@
 
         </GridView>
 
+
+
         <ImageView
             android:id="@+id/background22"
             android:layout_width="match_parent"
@@ -101,7 +103,26 @@
             android:orientation="horizontal"
             android:layout_toRightOf="@+id/free_center"
             android:layout_marginTop="355dp">
+
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/rotation_guide"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="234dp"
+            android:layout_marginLeft="562dp"
+            android:visibility="invisible"
+            android:background="@drawable/rotation_guide"/>
+
+        <ImageView
+            android:id="@+id/reflection_guide"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="234dp"
+            android:layout_marginLeft="615dp"
+            android:visibility="invisible"
+            android:background="@drawable/reflection_guide"/>
 
         <LinearLayout
             android:id="@+id/free_right2"
@@ -120,9 +141,5 @@
             android:layout_toRightOf="@+id/free_right2"
             android:layout_marginTop="355dp">
         </LinearLayout>
-
-
-
-
     </RelativeLayout>
 </LinearLayout>

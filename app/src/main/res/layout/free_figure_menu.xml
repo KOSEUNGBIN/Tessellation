@@ -139,6 +139,22 @@
             android:alpha="0.5"
             android:src="@drawable/free_figure_menu_empty_diamond" />
 
+            <ImageView
+                android:id="@+id/group_shape"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="28dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/group_shape" />
+
+            <ImageView
+                android:id="@+id/little_red_triangle"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="28dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/triangle_red" />
+
         </LinearLayout>
     </ScrollView>
 
