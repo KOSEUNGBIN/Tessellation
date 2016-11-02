@@ -58,13 +58,13 @@
             android:src="@drawable/free_paints_menu_03" />
 
         <ImageView
-
+            android:id="@+id/low_blue"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="6dp"
             android:layout_marginRight="7dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/free_paints_menu_04" />
+            android:background="@drawable/free_paints_menu_04" />
     </LinearLayout>
 
     <LinearLayout

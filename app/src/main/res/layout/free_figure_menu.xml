@@ -29,7 +29,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-        <ImageView
+
+
+
+            <ImageView
             android:id="@+id/free_figure_menu_triangle_usual_imgbtn"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -142,20 +145,21 @@
             <ImageView
                 android:id="@+id/group_shape"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="15dp"
                 android:layout_marginBottom="28dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/group_shape" />
+                android:background="@drawable/group_shape" />
 
             <ImageView
                 android:id="@+id/little_red_triangle"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="28dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/triangle_red" />
-
+                android:background="@drawable/triangle_red" />
         </LinearLayout>
+
+
     </ScrollView>
 
     <View

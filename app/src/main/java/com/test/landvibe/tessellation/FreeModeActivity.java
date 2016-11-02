@@ -62,6 +62,7 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
     private double mCurrAngle = 0;
     private double mPrevAngle = 0;
     boolean isNextRotation = false;
+    boolean isCloned = false;
 
     int border[] = {0,0,0,0};
     ArrayList<LinearLayout> list = new ArrayList<LinearLayout>();
@@ -93,12 +94,14 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
         gridView = (GridView) findViewById(R.id.gridView);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.free_center);
         final LinearLayout linearLayoutRight1 = (LinearLayout) findViewById(R.id.free_right1);
-        LinearLayout linearLayoutRight2 = (LinearLayout) findViewById(R.id.free_right2);
-        LinearLayout linearLayoutRight3 = (LinearLayout) findViewById(R.id.free_right3);
+        final LinearLayout linearLayoutRight2 = (LinearLayout) findViewById(R.id.free_right2);
+        final LinearLayout linearLayoutRight3 = (LinearLayout) findViewById(R.id.free_right3);
+        final LinearLayout linearLayoutLeft = (LinearLayout) findViewById(R.id.free_left);
         linearLayout.setOnDragListener(new MyDragListener0());
         linearLayoutRight1.setOnDragListener(new MyDragListener1());
         linearLayoutRight2.setOnDragListener(new MyDragListener2());
         linearLayoutRight3.setOnDragListener(new MyDragListener3());
+        linearLayoutLeft.setOnDragListener(new MyDragListener4());
         list.add(linearLayout);
         list.add(linearLayoutRight1);
         list.add(linearLayoutRight2);
@@ -114,6 +117,8 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
         red.setOnClickListener(this);
         ImageView blue = (ImageView) findViewById(R.id.blue);
         blue.setOnClickListener(this);
+        ImageView lowblue = (ImageView) findViewById(R.id.low_blue);
+        lowblue.setOnClickListener(this);
 
         rotateButton = (ImageView) findViewById(rotate);
         rotateButton.setOnClickListener(this);
@@ -227,6 +232,43 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
             }
         });
 
+        moveClone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(isSeleted[1] == true){
+                    linearLayoutRight3.setBackground(getResources().getDrawable(R.drawable.triangle_blue_right_));
+                    reflectButton.setAlpha(0.5f);
+                    rotateButton.setAlpha(0.5f);
+                    isCloned = true;
+                    moveClone.setAlpha(0.5f);
+                    isSeleted[0] = false;
+                    isSeleted[1] = false;
+                    reflectionGuide.setVisibility(View.INVISIBLE);
+                    reflectionGuide.setAlpha(0.0f);
+                    border[3] = 1;
+                    linearLayoutRight3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Log.d("???", ""+border[3]);
+                            if(border[3] == 1){
+                                linearLayoutRight3.setBackgroundDrawable(getResources().getDrawable(R.drawable.triangle_blue_right));
+                                border[3] = 2;
+                            } else if(border[3] ==0 || border[3] == 2){
+                                linearLayoutRight3.setBackgroundDrawable(getResources().getDrawable(R.drawable.triangle_blue_right_));
+                                border[3] = 1;
+                            } else {
+                                Log.d("???", ""+border[3]);
+                            }
+
+                        }
+                    });
+
+                } else if(isSeleted[1] == true){
+
+                }
+            }
+        });
+
         sizeChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -286,6 +328,7 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
         buttonEffect(green);
         buttonEffect(blue);
         buttonEffect(red);
+        buttonEffect(lowblue);
         buttonEffect(freeTopFigureImgbtn);
         buttonEffect(freeTopPaintsImgbtn);
         buttonEffect(freeTopSizeImgbtn);
@@ -477,6 +520,7 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
                 for(int i =0;  i< 4; i++ ){
                     if(border[i] == 1){
                         final LinearLayout temp =  list.get(i);
+
                         temp.setBackground(getResources().getDrawable(R.drawable.triangle_green_));
                         final int foo = i;
                         temp.setOnClickListener(new View.OnClickListener() {
@@ -527,7 +571,7 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
             case  R.id.blue:
             {
                 for(int i =0;  i< 4; i++ ){
-                    if(border[i] == 1){
+                    if(border[i] == 1 ){
                         final LinearLayout temp =  list.get(i);
                         temp.setBackground(getResources().getDrawable(R.drawable.triangle_blue_origin_));
                         final int foo = i;
@@ -539,6 +583,32 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
                                     border[foo] = 2;
                                 } else if(border[foo] ==0 || border[foo] == 2){
                                     temp.setBackgroundDrawable(getResources().getDrawable(R.drawable.triangle_blue_origin_));
+                                    border[foo] = 1;
+                                } else {
+                                    Log.d("???", ""+border[0]);
+                                }
+
+                            }
+                        });
+                    }
+                }
+                break;
+            }
+            case  R.id.low_blue:
+            {
+                for(int i =0;  i< 4; i++ ){
+                    if(border[i] == 1 && isCloned){
+                        final LinearLayout temp =  list.get(i);
+                        temp.setBackground(getResources().getDrawable(R.drawable.triangle_low_blue_));
+                        final int foo = i;
+                        temp.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if(border[foo] == 1){
+                                    temp.setBackgroundDrawable(getResources().getDrawable(R.drawable.triangle_low_blue));
+                                    border[foo] = 2;
+                                } else if(border[foo] ==0 || border[foo] == 2){
+                                    temp.setBackgroundDrawable(getResources().getDrawable(R.drawable.triangle_low_blue_));
                                     border[foo] = 1;
                                 } else {
                                     Log.d("???", ""+border[0]);
@@ -768,6 +838,31 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
 
                         }
                     });
+                    break;
+                case DragEvent.ACTION_DRAG_ENDED:
+                default:
+                    break;
+            }
+            return true;
+        }
+    }
+
+    class MyDragListener4 implements View.OnDragListener {
+
+        @Override
+        public boolean onDrag(final View v, DragEvent event) {
+            int action = event.getAction();
+            switch (event.getAction()) {
+                case DragEvent.ACTION_DRAG_STARTED:
+                    // do nothing
+                    break;
+                case DragEvent.ACTION_DRAG_ENTERED:
+                    break;
+                case DragEvent.ACTION_DRAG_EXITED:
+
+                    break;
+                case DragEvent.ACTION_DROP:
+                    v.setBackgroundDrawable(enterShape);
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
                 default:
