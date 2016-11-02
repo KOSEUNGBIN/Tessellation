@@ -36,6 +36,14 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
 
         </activity>
+
+        <activity
+            android:name=".Scene1CompleteActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+
+        </activity>
+
         <activity android:name=".FreeModeActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">

@@ -3,6 +3,7 @@ package com.test.landvibe.tessellation;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +31,10 @@ import static com.test.landvibe.tessellation.R.id.rotate;
  */
 
 public class FreeModeActivity extends Activity implements View.OnClickListener {
+
+    private  AnimationDrawable frameAnimation;
+    private ImageView background22;
+
     private SimpleFingerGestures mySfg = new SimpleFingerGestures();
     private GridView gridView;
 
@@ -70,6 +75,12 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_free);
+
+        background22 = (ImageView) findViewById(R.id.background22);
+        background22.setImageResource(R.drawable.freemode_animation_list);
+        frameAnimation = (AnimationDrawable) background22.getDrawable();
+
+        frameAnimation.start();
 
         ImageView default_triangle = (ImageView) findViewById(R.id.free_figure_menu_triangle_usual_imgbtn);
         default_triangle.setOnTouchListener(new MyTouchListener());
@@ -435,6 +446,9 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
             case R.id.free_done :
             {
                 // 완성 버튼의 액션
+                Intent intent = new Intent(FreeModeActivity.this, Scene1CompleteActivity.class);
+                startActivity(intent);
+                finish();
                 break;
             }
             case R.id.free_figure_upward_imgbtn :
