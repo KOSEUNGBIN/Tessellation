@@ -1,0 +1,25 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false" >
+
+
+    <item android:drawable="@drawable/scene2_popup_00" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_01" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_02" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_03" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_04" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_05" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_06" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_07" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_08" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_09" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_10" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_11" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_12" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_13" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_14" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_15" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_16" android:duration="70" />
+    <item android:drawable="@drawable/scene2_popup_17" android:duration="70" />
+
+
+</animation-list>
