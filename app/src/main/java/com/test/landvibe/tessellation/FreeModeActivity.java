@@ -48,7 +48,7 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
     private View freeMenuIncludePaints;
     private View freeMenuIncludeSize;
     private View freeMenuIncludeMoving;
-
+//
     private ImageView freeFigureUpwardImgbtn;
     private ImageView freePaintsUpwardImgbtn;
     private ImageView freeSizeUpwardImgbtn;
