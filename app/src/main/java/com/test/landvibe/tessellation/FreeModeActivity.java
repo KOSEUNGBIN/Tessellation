@@ -48,7 +48,7 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
     private View freeMenuIncludePaints;
     private View freeMenuIncludeSize;
     private View freeMenuIncludeMoving;
-//
+
     private ImageView freeFigureUpwardImgbtn;
     private ImageView freePaintsUpwardImgbtn;
     private ImageView freeSizeUpwardImgbtn;
@@ -71,7 +71,7 @@ public class FreeModeActivity extends Activity implements View.OnClickListener {
     int border[] = {0,0,0,0};
     ArrayList<LinearLayout> list = new ArrayList<LinearLayout>();
     final boolean isSeleted[] = new boolean[5];
-
+    //2
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_free);
